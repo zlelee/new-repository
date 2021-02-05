@@ -1,32 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <child1 />
+    <child2 />
   </div>
 </template>
-
+<script>
+import child1 from '@/components/child1.vue'
+import child2 from './components/child2.vue'
+export default {
+  name: 'app',
+  data() {
+    return {
+      msg: '你好'
+    }
+  },
+  components: {
+    child1,
+    child2
+  },
+  methods: {}
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+div {
+  height: 200px;
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
